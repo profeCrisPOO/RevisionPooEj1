@@ -14,8 +14,6 @@ import javax.swing.JOptionPane;
  */
 public class ShopOnLine {
 
-    static int cont = 0;
-
     public static void main(String[] args) {
         int ingresar = 0;
         Cliente cliente = CrearCliente();
@@ -28,7 +26,6 @@ public class ShopOnLine {
         ingresar = Integer.parseInt(JOptionPane.showInputDialog("2-Desea realizar otra compra- 3 Cerrar cajas"));
 
         while (ingresar == 2) {
-            System.out.println("sddddddd");
             Cliente cliente1 = CrearCliente();
             Venta venta1 = CrearVenta(cliente1);
             HacerCompra(cliente1, venta1);
