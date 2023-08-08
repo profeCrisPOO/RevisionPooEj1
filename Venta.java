@@ -1,0 +1,53 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.ejerciciorevision;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author ET36
+ */
+public class Venta {
+
+    private ArrayList<Producto> producto = new ArrayList<Producto>();
+    private Cliente cliente;
+    private static int cantVentas = 1090;
+    private int nroFact;
+    private LocalDate fecha;
+
+    public Venta(LocalDate fecha) {
+        int cont = 0;
+        this.fecha = fecha;
+        cantVentas++;
+        nroFact = cantVentas;
+
+    }
+
+    public void agregarProducto(Producto p) {
+        producto.add(p);
+    }
+
+    public double calcularImporte() {
+        double importe = 0;
+        for (Producto p : producto) {
+            importe = importe + p.getPrecio();
+        }
+        return importe;
+    }
+
+    public void ImprimirFactura(double importe) {
+        System.out.println("Factura Nº" + nroFact + "-" + fecha);
+
+        System.out.println("");
+        for (Producto p : producto) {
+            System.out.println(p.desc + ".........$" + p.getPrecio() + "(" + p.toString() + ")");
+
+        }
+        System.out.println("Total a pagar:" + "$" + importe);
+    }
+
+}
