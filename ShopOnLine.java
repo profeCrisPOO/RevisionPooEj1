@@ -5,6 +5,7 @@
 package com.mycompany.ejerciciorevision;
 
 import java.time.LocalDate;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,11 +14,30 @@ import javax.swing.JOptionPane;
  */
 public class ShopOnLine {
 
+    static int cont = 0;
+
     public static void main(String[] args) {
+        int ingresar = 0;
         Cliente cliente = CrearCliente();
-        Venta venta = CrearVenta();
+        Venta venta = CrearVenta(cliente);
 
         HacerCompra(cliente, venta);
+        double importe = venta.calcularImporte();
+        venta.ImprimirFactura(importe);
+
+        ingresar = Integer.parseInt(JOptionPane.showInputDialog("2-Desea realizar otra compra- 3 Cerrar cajas"));
+
+        while (ingresar == 2) {
+            System.out.println("sddddddd");
+            Cliente cliente1 = CrearCliente();
+            Venta venta1 = CrearVenta(cliente1);
+            HacerCompra(cliente1, venta1);
+            double importe1 = venta1.calcularImporte();
+            venta1.ImprimirFactura(importe1);
+            ingresar = Integer.parseInt(JOptionPane.showInputDialog("2-Desea realizar otra compra- 3 Cerrar cajas"));
+
+        }
+
     }
 
     public static Cliente CrearCliente() {
@@ -47,10 +67,10 @@ public class ShopOnLine {
         return accesorio;
     }
 
-    public static Venta CrearVenta() {
+    public static Venta CrearVenta(Cliente cliente) {
         LocalDate fecha;
         fecha = LocalDate.now();
-        Venta venta = new Venta(fecha);
+        Venta venta = new Venta(fecha, cliente);
         return venta;
     }
 
@@ -64,6 +84,7 @@ public class ShopOnLine {
     }
 
     public static void HacerCompra(Cliente cliente, Venta venta) {
+
         int ingresar = 1;
         int opc = 0;
         char talle;
@@ -112,16 +133,13 @@ public class ShopOnLine {
                     break;
             }
 
-            ingresar = Integer.parseInt(JOptionPane.showInputDialog("Desea terminar su compra: 1 No -2 SI"));
-            if (ingresar == 2) {
-                double importe = CalcularImporte(venta);
-                ImprimirFactura(venta, importe);
-            }
+            ingresar = Integer.parseInt(JOptionPane.showInputDialog("Desea quiere hacer: 1 - Seguir comprando 2 - NO"));
             while (ingresar < 1 || ingresar > 2) {
                 JOptionPane.showMessageDialog(null, "Error, ingrese de nuevo");
-                ingresar = Integer.parseInt(JOptionPane.showInputDialog("Desea terminar su compra: 1 No -2 SI"));
+                ingresar = Integer.parseInt(JOptionPane.showInputDialog("Desea quiere hacer: 1 - Seguir comprando - 2 Realizar otra compra "));
 
             }
+
         }
 
     }

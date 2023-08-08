@@ -17,6 +17,7 @@ public class Remera extends Producto {
         this.talle = talle;
     }
 
+    @Override
     public double CalcularPrecio() {
         double precioFinal = 0;
         if (talle == 'S') {

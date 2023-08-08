@@ -40,4 +40,9 @@ public class Cliente {
         return precioFinal;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente" + "nombre=" + nombre + ", dni=" + dni + ", telefono=" + telefono ;
+    }
+
 }

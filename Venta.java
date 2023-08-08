@@ -19,11 +19,12 @@ public class Venta {
     private int nroFact;
     private LocalDate fecha;
 
-    public Venta(LocalDate fecha) {
+    public Venta(LocalDate fecha, Cliente cli) {
         int cont = 0;
         this.fecha = fecha;
         cantVentas++;
         nroFact = cantVentas;
+        this.cliente=cli;
 
     }
 
@@ -43,6 +44,7 @@ public class Venta {
         System.out.println("Factura Nº" + nroFact + "-" + fecha);
 
         System.out.println("");
+        System.out.println(cliente.toString());
         for (Producto p : producto) {
             System.out.println(p.desc + ".........$" + p.getPrecio() + "(" + p.toString() + ")");
 
