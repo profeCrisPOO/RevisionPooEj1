@@ -5,7 +5,6 @@
 package com.mycompany.ejerciciorevision;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -71,14 +70,13 @@ public class ShopOnLine {
         double precio;
         String desc;
         double precioFinal = 0;
-        ArrayList<Object> array = new ArrayList<Object>();
         while (ingresar == 1) {
             opc = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer: 1 - Comprar remeras: - 2 Pantalon - 3 Accesorios"));
             switch (opc) {
                 case 1:
                     talle = JOptionPane.showInputDialog("Digite el talle de su remera: S-M-L-XL").charAt(0);
                     precio = Double.parseDouble(JOptionPane.showInputDialog("Digite su precio"));
-                    desc = JOptionPane.showInputDialog("Diigte la discripccion");
+                    desc = JOptionPane.showInputDialog("Diigte la descripcion");
 
                     Remera remera = CrearRemera(talle, precio, desc);
                     precioFinal = cliente.HacerCompra(remera);
@@ -103,7 +101,7 @@ public class ShopOnLine {
                     String metal = JOptionPane.showInputDialog("Digite el material del accesorio que desea: 1 Oro, Plata, Acero");
                     desc = JOptionPane.showInputDialog("Diigte la discripccion");
 
-                    double peso = Double.parseDouble(JOptionPane.showInputDialog("Digite el peso del accesorio"));
+                    double peso = Double.parseDouble(JOptionPane.showInputDialog("Digite el peso del accesorio en KG"));
                     Accesorio accesorio = CrearAccesorio(metal, desc, peso);
                     precioFinal = cliente.HacerCompra(accesorio);
                     accesorio.setPrecio(precioFinal);

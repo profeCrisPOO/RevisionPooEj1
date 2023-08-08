@@ -19,18 +19,16 @@ public class Pantalon extends Producto {
         this.modelo = modelo;
     }
 
-  
-
     @Override
     public double CalcularPrecio() {
 
         double precioFinal = 0;
-        if ("Oxford".equals(modelo)) {
+        if ("Oxford".equalsIgnoreCase(modelo)) {
             precioFinal = precio + (precio * 15 / 100);
 
-        } else if ("Skinny".equals(modelo)) {
+        } else if ("Skinny".equalsIgnoreCase(modelo)) {
             precioFinal = precio + (precio * 25 / 100);
-        } else if ("Recto".equals(modelo)) {
+        } else if ("Recto".equalsIgnoreCase(modelo)) {
             precioFinal = precio - (precio * 15 / 100);
         }
 
@@ -38,15 +36,13 @@ public class Pantalon extends Producto {
     }
 
     @Override
-  public double getPrecio(){
-      return precio;
-  }
-    
-    
-    @Override
-    public String toString() {
-        return  "talle=" + talle ;
+    public double getPrecio() {
+        return precio;
     }
 
-    
+    @Override
+    public String toString() {
+        return "talle=" + talle;
+    }
+
 }

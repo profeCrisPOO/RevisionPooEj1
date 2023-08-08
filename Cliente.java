@@ -11,7 +11,8 @@ import java.util.ArrayList;
  * @author ET36
  */
 public class Cliente {
-   private String nombre;
+
+    private String nombre;
     private int dni;
     private int telefono;
 
@@ -32,12 +33,11 @@ public class Cliente {
     public int getTelefono() {
         return telefono;
     }
-    
-   public double HacerCompra(Producto p){
-      double precioFinal= p.CalcularPrecio();
-       
-       return precioFinal;
-   }
-    
-    
+
+    public double HacerCompra(Producto p) {
+        double precioFinal = p.CalcularPrecio();
+
+        return precioFinal;
+    }
+
 }

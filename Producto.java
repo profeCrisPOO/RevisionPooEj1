@@ -9,14 +9,15 @@ package com.mycompany.ejerciciorevision;
  * @author ET36
  */
 public abstract class Producto {
- protected String desc;
- protected double precio;
-protected int codigo;
+
+    protected String desc;
+    protected double precio;
+    protected int codigo;
 
     public Producto(String desc, double precio) {
         this.desc = desc;
         this.precio = precio;
-        this.codigo= codigo++;
+        this.codigo = codigo++;
     }
 
     @Override
@@ -37,7 +38,6 @@ protected int codigo;
     public void setPrecio(double precio) {
         this.precio = precio;
     }
- 
+
     public abstract double CalcularPrecio();
 }
-

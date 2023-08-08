@@ -17,14 +17,11 @@ public class Remera extends Producto {
         this.talle = talle;
     }
 
-   
-
     public double CalcularPrecio() {
-        double precioFinal=0;
+        double precioFinal = 0;
         if (talle == 'S') {
-            double por =(precio  /100)*5;
-precioFinal= por + precio;
-            System.out.println(precioFinal + "papaaa");
+            double por = (precio / 100) * 5;
+            precioFinal = por + precio;
         } else if (talle == 'M') {
             precioFinal = precio + (precio * 10 / 100);
         } else if (talle == 'L') {
@@ -35,15 +32,15 @@ precioFinal= por + precio;
 
         return precioFinal;
     }
-    
+
     @Override
-    public double  getPrecio(){
+    public double getPrecio() {
         return precio;
     }
 
     @Override
     public String toString() {
-        return  "talle:" + talle ;
+        return "talle:" + talle;
     }
 
 }
