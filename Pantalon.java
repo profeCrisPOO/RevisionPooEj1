@@ -10,10 +10,10 @@ package com.mycompany.ejerciciorevision;
  */
 public class Pantalon extends Producto {
 
-    private char talle;
+    private String talle;
     private String modelo;
 
-    public Pantalon(char talle, String modelo, String desc, double precio) {
+    public Pantalon(String talle, String modelo, String desc, double precio) {
         super(desc, precio);
         this.talle = talle;
         this.modelo = modelo;

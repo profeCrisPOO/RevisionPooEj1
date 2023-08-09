@@ -22,7 +22,11 @@ public class ShopOnLine {
         HacerCompra(cliente, venta);
         double importe = venta.calcularImporte();
         venta.ImprimirFactura(importe);
+        Ingresar(ingresar);
 
+    }
+
+    public static void Ingresar(int ingresar) {
         ingresar = Integer.parseInt(JOptionPane.showInputDialog("2-Desea realizar otra compra- 3 Cerrar cajas"));
 
         while (ingresar == 2) {
@@ -49,12 +53,12 @@ public class ShopOnLine {
         return cliente;
     }
 
-    public static Remera CrearRemera(char talle, double precio, String desc) {
+    public static Remera CrearRemera(String talle, double precio, String desc) {
         Remera remera = new Remera(talle, desc, precio);
         return remera;
     }
 
-    public static Pantalon CrearPantalon(String modelo, double precio, String desc, char talle) {
+    public static Pantalon CrearPantalon(String modelo, double precio, String desc, String talle) {
         Pantalon pantalon = new Pantalon(talle, modelo, desc, precio);
         return pantalon;
     }
@@ -84,7 +88,7 @@ public class ShopOnLine {
 
         int ingresar = 1;
         int opc = 0;
-        char talle;
+        String talle;
         double precio;
         String desc;
         double precioFinal = 0;
@@ -92,7 +96,7 @@ public class ShopOnLine {
             opc = Integer.parseInt(JOptionPane.showInputDialog("Que desea hacer: 1 - Comprar remeras: - 2 Pantalon - 3 Accesorios"));
             switch (opc) {
                 case 1:
-                    talle = JOptionPane.showInputDialog("Digite el talle de su remera: S-M-L-XL").charAt(0);
+                    talle = JOptionPane.showInputDialog("Digite el talle de su remera: S-M-L-XL");
                     precio = Double.parseDouble(JOptionPane.showInputDialog("Digite su precio"));
                     desc = JOptionPane.showInputDialog("Diigte la descripcion");
 
@@ -106,7 +110,7 @@ public class ShopOnLine {
                     break;
                 case 2:
                     String modelo = JOptionPane.showInputDialog("Digite el modelo de su pantalon: a - Oxford -b Skinny - c- Recto");
-                    talle = JOptionPane.showInputDialog("Digite el talle de su pantalon: S-M-L-XL").charAt(0);
+                    talle = JOptionPane.showInputDialog("Digite el talle de su pantalon: S-M-L-XL");
                     precio = Double.parseDouble(JOptionPane.showInputDialog("Digite su precio"));
                     desc = JOptionPane.showInputDialog("Diigte la discripccion");
                     Pantalon p = CrearPantalon(modelo, precio, desc, talle);

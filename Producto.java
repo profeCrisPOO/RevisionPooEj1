@@ -12,7 +12,7 @@ public abstract class Producto {
 
     protected String desc;
     protected double precio;
-    protected int codigo;
+    protected static int codigo;
 
     public Producto(String desc, double precio) {
         this.desc = desc;

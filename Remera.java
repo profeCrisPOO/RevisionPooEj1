@@ -10,9 +10,9 @@ package com.mycompany.ejerciciorevision;
  */
 public class Remera extends Producto {
 
-    private char talle;
+    private String talle;
 
-    public Remera(char talle, String desc, double precio) {
+    public Remera(String talle, String desc, double precio) {
         super(desc, precio);
         this.talle = talle;
     }
@@ -20,12 +20,12 @@ public class Remera extends Producto {
     @Override
     public double CalcularPrecio() {
         double precioFinal = 0;
-        if (talle == 'S') {
+        if (talle.equalsIgnoreCase("s")) {
             double por = (precio / 100) * 5;
             precioFinal = por + precio;
-        } else if (talle == 'M') {
+        } else if (talle.equalsIgnoreCase("M")) {
             precioFinal = precio + (precio * 10 / 100);
-        } else if (talle == 'L') {
+        } else if (talle.equalsIgnoreCase("X")) {
             precioFinal = precio + (precio * 15 / 100);
         } else {
             precioFinal = precio + (precio * 20 / 100);
