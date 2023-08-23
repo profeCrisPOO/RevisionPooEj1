@@ -42,7 +42,8 @@ public class Pantalon extends Producto {
 
     @Override
     public String toString() {
-        return "talle=" + talle;
+        // hay que invoacar al toString() de Producto
+        return "( talle=" + talle + ")";
     }
 
 }
