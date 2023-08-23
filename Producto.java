@@ -38,6 +38,6 @@ public abstract class Producto {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
-
+// este métdo NO existe en el diagrama de clases
     public abstract double CalcularPrecio();
 }
