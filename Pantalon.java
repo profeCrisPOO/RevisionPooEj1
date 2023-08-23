@@ -42,6 +42,7 @@ public class Pantalon extends Producto {
 
     @Override
     public String toString() {
+        // incompleto deberían invocar al método de la clase padre
         return "talle=" + talle;
     }
 
