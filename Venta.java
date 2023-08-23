@@ -22,8 +22,8 @@ public class Venta {
     public Venta(LocalDate fecha, Cliente cli) {
         int cont = 0;
         this.fecha = fecha;
-        cantVentas++;
-        nroFact = cantVentas;
+        //cantVentas++;
+        nroFact = Venta.cantVentas ++;
         this.cliente=cli;
 
     }
