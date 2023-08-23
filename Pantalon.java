@@ -37,11 +37,13 @@ public class Pantalon extends Producto {
 
     @Override
     public double getPrecio() {
+        // falta invocar al calcularPrecio()
         return precio;
     }
 
     @Override
     public String toString() {
+        // incompleto falta invocar al toString() de producto
         return "talle=" + talle;
     }
 
