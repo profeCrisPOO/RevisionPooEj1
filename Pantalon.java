@@ -9,7 +9,7 @@ package com.mycompany.ejerciciorevision;
  * @author ET36
  */
 public class Pantalon extends Producto {
-
+// el talle de pantalon es int
     private String talle;
     private String modelo;
 
@@ -37,11 +37,13 @@ public class Pantalon extends Producto {
 
     @Override
     public double getPrecio() {
+        // deberían invocar al calcularPrecio()
         return precio;
     }
 
     @Override
     public String toString() {
+        // incompleto, deberían invocaar al toString() de producto
         return "talle=" + talle;
     }
 
