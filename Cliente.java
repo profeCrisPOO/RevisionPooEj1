@@ -33,7 +33,7 @@ public class Cliente {
     public int getTelefono() {
         return telefono;
     }
-
+//  Este método no debería estar en esta clase
     public double HacerCompra(Producto p) {
         double precioFinal = p.CalcularPrecio();
 
